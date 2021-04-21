@@ -1,10 +1,22 @@
 import * as express from "express";
 import chirpstore from "./chirpstore";
 import App from "../client/App";
+import chirps from "../db/chirps";
+
 const router = express.Router();
 
 router.get("/hello", (req, res, next) => {
   res.json("World, it works!");
+});
+
+router.get("/chirps2", async (req, res) => {
+  try {
+    res.json(await db.Chirps.all());
+  } catch (e) {
+    console.log(e);
+    console.log("this is not working");
+    res.sendStatus(500);
+  }
 });
 
 //this is the get request that will either specify a specific chirp to get, or it will return all chirps if no chirp was specified.

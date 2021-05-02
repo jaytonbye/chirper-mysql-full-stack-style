@@ -87,33 +87,13 @@ const Home = (props: HomeProps) => {
         or checkout these fresh Chrips, hot off the presses:
       </h2>
       {chirps.map((singleChirp) => {
+        console.log(singleChirp);
         return (
           <div className="card" key={singleChirp.id}>
             <p>chirp Number: {singleChirp.id}</p>
             <div className="card-body">
-              <h5 className="card-title">{singleChirp.username}</h5>
-              <p className="card-text">{singleChirp.message}</p>
-              <button
-                onClick={() => {
-                  fetch(`/api/chirps/${singleChirp.id}`, {
-                    method: "PUT",
-                    headers: {
-                      "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                      username: "test edit",
-                      message: "It works!",
-                    }),
-                  });
-                  fetch("/api/chirps")
-                    .then((res) => res.json())
-                    .then((data) => {
-                      setChirps(data);
-                    });
-                }}
-              >
-                Edit Chirp (currently has delete functionality)
-              </button>
+              <h5 className="card-title">{singleChirp.userid}</h5>
+              <p className="card-text">{singleChirp.content}</p>
               <button
                 onClick={() => {
                   fetch(`/api/chirps/${singleChirp.id}`, {

@@ -9,7 +9,6 @@ const App = (props: AppProps) => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="/compose"></Route>
       </Switch>
     </BrowserRouter>
   );

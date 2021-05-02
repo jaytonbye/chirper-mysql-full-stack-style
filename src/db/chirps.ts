@@ -1,6 +1,7 @@
 import { Query } from "./config";
 
-const all = async () => Query("SELECT * FROM chirps");
+const all = async () =>
+  Query("SELECT * FROM chirps JOIN users on users.id=chirps.userid");
 
 const individualChirp = async (chirpId: number) => {
   return Query(`SELECT * FROM chirps WHERE chirps.id=${chirpId}`);

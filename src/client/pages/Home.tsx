@@ -92,7 +92,7 @@ const Home = (props: HomeProps) => {
           <div className="card" key={singleChirp.id}>
             <p>chirp Number: {singleChirp.id}</p>
             <div className="card-body">
-              <h5 className="card-title">{singleChirp.userid}</h5>
+              <h5 className="card-title">{singleChirp.name}</h5>
               <p className="card-text">{singleChirp.content}</p>
               <button
                 onClick={() => {

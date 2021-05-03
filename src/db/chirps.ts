@@ -1,5 +1,7 @@
 import { Query } from "./config";
 
+//I believe that these are the functions for communicating with the database once we submit get, post, put, and delete requests in our server?
+
 const all = async () =>
   Query("SELECT * FROM chirps JOIN users on users.id=chirps.userid");
 

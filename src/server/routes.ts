@@ -1,6 +1,4 @@
 import * as express from "express";
-import chirpstore from "./chirpstore";
-import App from "../client/App";
 import db from "../db";
 
 const router = express.Router();

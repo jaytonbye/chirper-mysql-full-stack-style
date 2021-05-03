@@ -54,7 +54,10 @@ const Home = (props: HomeProps) => {
         }}
       />
       <button onClick={handleAddChirp}>Add a chirp</button>
-      <h2>or select the chirp you would like to update</h2>
+      <h2>
+        or select the chirp you would like to update (currently does not update
+        username)
+      </h2>
       <label htmlFor="">Chirp Number</label>
       <input
         value={chirpNumber}

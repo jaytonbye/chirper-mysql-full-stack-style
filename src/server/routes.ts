@@ -45,10 +45,7 @@ router.delete("/chirps/:id", (req, res) => {
 
 router.put("/chirps/:id", (req, res) => {
   let id = Number(req.params.id);
-  chirpstore.UpdateChirp(id, req.body);
-  res.json("your chirp was updated");
-  console.log("hey jay");
-  console.log(req.body);
+  db.Chirps.updateTheChirp(id, req.body);
 });
 
 export default router;

@@ -21,11 +21,11 @@ const createTheChirp = async (chirp: IChirp) => {
   ]);
 };
 
-const updateTheChirp = async (chirpId: number) => {
-  //the first query will create a new username if it doesn't already exist, the 2nd query updates the message and username of the chirp.
-  //not finished
-  Query(`UPDATE users SET name='jason' WHERE`);
-  Query(``);
+const updateTheChirp = async (chirpId: number, chirp: IChirp) => {
+  //so far we are only updating the message, not the username
+  return Promise.all([
+    Query(`UPDATE chirps SET content="${chirp.message}" WHERE id="${chirpId}"`),
+  ]);
 };
 
 const deleteTheChirp = async (chirpId: number) => {
